@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Product beans -->
+    <bean id="productOne" class="com.springone.ioc.Product">
+        <property name="productId" value="101"/> <!-- FIXED -->
+        <property name="productName" value="Earphones"/>
+        <property name="price" value="900"/>
+    </bean>
+
+    <bean id="productTwo" class="com.springone.ioc.Product">
+        <property name="productId" value="102"/>
+        <property name="productName" value="Charger"/>
+        <property name="price" value="600"/>
+    </bean>
+
+    <!-- List of products -->
+    <bean id="productListOne" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="productOne"/>
+                <ref bean="productTwo"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <!-- Cart bean (autowired by type) -->
+    <bean id="cart" class="com.springone.ioc.Cart" autowire="byType"/>
+</beans>

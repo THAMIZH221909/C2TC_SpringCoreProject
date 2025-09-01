@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+       
+       <bean id = "clothes" class = "com.tnsif.SampleSpring.Clothes"/>
+       
+       <bean id = "food" class = "com.tnsif.SampleSpring.Food"/>
+       
+       <bean id = "customer1" class = "com.tnsif.SampleSpring.Customer">
+            <property name="id" value = "102"/>
+            <property name="name" value = "Arjun"/>
+            <property name="city" value = "Chennai"/>
+            <property name="s1" ref = "food"/>
+       </bean>
+       
+       <bean id = "customer2" class = "com.tnsif.SampleSpring.Customer">
+            <property name="id" value = "103"/>
+            <property name="name" value = "Arvind"/>
+            <property name="city" value = "Puducherry"/>
+            <property name="s1" ref = "clothes"/>
+       </bean>
+</beans>
